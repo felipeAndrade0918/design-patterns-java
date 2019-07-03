@@ -2,19 +2,26 @@ package com.batuta.design_patterns.strategy.duck;
 
 import com.batuta.design_patterns.strategy.strategy.Fly;
 
-public abstract class Duck {
+public class Duck {
 
-	protected Fly flyingAbility;
+	private String name;
 	
-	public Duck(Fly flyingAbility) {
+	private Fly flyingAbility;
+	
+	public Duck(String name, Fly flyingAbility) {
 		super();
+		this.name = name;
 		this.flyingAbility = flyingAbility;
 	}
+	
+	public String getName() {
+		return name;
+	}
 
-	public abstract void printName();
-	
-	public abstract void fly();
-	
+	public String fly() {
+		return flyingAbility.fly();
+	}
+
 	public void setFlyingAbility(Fly flyingAbility) {
 		this.flyingAbility = flyingAbility;
 	}

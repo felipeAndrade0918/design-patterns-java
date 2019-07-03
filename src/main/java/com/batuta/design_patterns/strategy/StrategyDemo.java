@@ -1,9 +1,8 @@
 package com.batuta.design_patterns.strategy;
 
 import com.batuta.design_patterns.strategy.duck.Duck;
-import com.batuta.design_patterns.strategy.duck.RubberDuck;
-import com.batuta.design_patterns.strategy.duck.WildDuck;
 import com.batuta.design_patterns.strategy.strategy.CanFly;
+import com.batuta.design_patterns.strategy.strategy.CantFly;
 
 public class StrategyDemo {
 
@@ -20,22 +19,16 @@ public class StrategyDemo {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Duck wildDuck = new WildDuck();
-		Duck rubberDuck = new RubberDuck();
+		Duck rubberDuck = new Duck("Rubber Duck", new CantFly());
 		
-		wildDuck.printName();
-		wildDuck.fly();
+		System.out.println(rubberDuck.getName());
+		System.out.println(rubberDuck.fly());
 		
 		System.out.println();
-		
-		rubberDuck.printName();
-		rubberDuck.fly();
 		
 		rubberDuck.setFlyingAbility(new CanFly());
 		
-		System.out.println();
-		
-		rubberDuck.printName();
-		rubberDuck.fly();
+		System.out.println(rubberDuck.getName());
+		System.out.println(rubberDuck.fly());
 	}
 }
