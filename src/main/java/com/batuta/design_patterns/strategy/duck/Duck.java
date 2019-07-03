@@ -10,6 +10,11 @@ public class Duck {
 	
 	public Duck(String name, Fly flyingAbility) {
 		super();
+		
+		if (name == null || flyingAbility == null) {
+			throw new IllegalArgumentException("Constructor parameters cannot be null");
+		}
+		
 		this.name = name;
 		this.flyingAbility = flyingAbility;
 	}
