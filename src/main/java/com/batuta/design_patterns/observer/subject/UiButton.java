@@ -20,4 +20,9 @@ public class UiButton implements UiComponent {
 	public void notifyAction() {
 		clickActionListeners.forEach(ActionListener::onClick);
 	}
+
+	@Override
+	public int getActionListenersSize() {
+		return clickActionListeners.size();
+	}
 }

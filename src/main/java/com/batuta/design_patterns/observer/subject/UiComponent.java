@@ -9,4 +9,6 @@ public interface UiComponent {
 	void removeActionListener(ActionListener actionListener);
 	
 	void notifyAction();
+	
+	int getActionListenersSize();
 }
