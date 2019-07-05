@@ -14,7 +14,7 @@ public class SugarDecorator implements CondimentDecorator {
 	}
 
 	public String getDescription() {
-		return beverage.getDescription() + ",with sugar";
+		return beverage.getDescription() + ", with sugar";
 	}
 
 	public BigDecimal getCost() {
